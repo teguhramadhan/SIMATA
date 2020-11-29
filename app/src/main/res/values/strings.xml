@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">SIMATA</string>
+
+    <string-array name="list_sto">
+        <item>BJA</item>
+        <item>BTJ</item>
+        <item>CSA</item>
+        <item>CLK</item>
+        <item>CLL</item>
+        <item>CKW</item>
+        <item>CMI</item>
+        <item>CPT</item>
+        <item>CWD</item>
+        <item>GNH</item>
+        <item>LEM</item>
+        <item>MJA</item>
+        <item>PDL</item>
+        <item>PNL</item>
+        <item>RCK</item>
+        <item>RJW</item>
+        <item>SOR</item>
+    </string-array>
+</resources>

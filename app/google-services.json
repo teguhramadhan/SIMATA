@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "660733069261",
+    "firebase_url": "https://simata-97ff8.firebaseio.com",
+    "project_id": "simata-97ff8",
+    "storage_bucket": "simata-97ff8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660733069261:android:9cca13574ce0b445ea6684",
+        "android_client_info": {
+          "package_name": "com.teguhrmdhn.ftmconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660733069261-7gs41kp8dbisdqdiqgiat6623944ielu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPOjvLAkNg0ChZDiyn3rWgIVP9ZV7OV68"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660733069261-7gs41kp8dbisdqdiqgiat6623944ielu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660733069261:android:07c54b2ca485fc43ea6684",
+        "android_client_info": {
+          "package_name": "com.teguhrmdhn.simata"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660733069261-7gs41kp8dbisdqdiqgiat6623944ielu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPOjvLAkNg0ChZDiyn3rWgIVP9ZV7OV68"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660733069261-7gs41kp8dbisdqdiqgiat6623944ielu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
