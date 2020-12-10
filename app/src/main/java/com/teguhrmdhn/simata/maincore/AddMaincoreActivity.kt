@@ -1,10 +1,14 @@
-package com.teguhrmdhn.simata
+package com.teguhrmdhn.simata.maincore
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.teguhrmdhn.simata.DashboardActivity
+import com.teguhrmdhn.simata.R
+import com.teguhrmdhn.simata.ShowMaincoreActivity
 import kotlinx.android.synthetic.main.activity_add_maincore.*
 
 class AddMaincoreActivity : AppCompatActivity() {
@@ -27,7 +31,6 @@ class AddMaincoreActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_maincore)
 
-
         mDatabaseReference = FirebaseDatabase.getInstance().getReference("MAINCORE")
 
         btn_inputdatamaincore.setOnClickListener {
@@ -36,6 +39,16 @@ class AddMaincoreActivity : AppCompatActivity() {
     }
 
     private fun saveDataMaincore() {
+
+        val tanggal = et_tanggal.text.toString()
+        val teknisi = et_teknisi.text.toString()
+        val sto = et_sto.text.toString()
+        val gpon_slot = et_gponslot.text.toString()
+        val gpon_ip = et_gponip.text.toString()
+        val ea = et_ea.text.toString()
+        val oa = et_oa.text.toString()
+        val keterangan = et_keterangan.text.toString()
+
         val datamaincore = Maincore(tanggal, teknisi, sto, gpon_slot, gpon_ip, ea, oa,keterangan)
         val userId = mDatabaseReference.push().key.toString()
 
@@ -49,6 +62,9 @@ class AddMaincoreActivity : AppCompatActivity() {
             et_ea.setText("")
             et_oa.setText("")
             et_keterangan.setText("")
+            val moveDashboard = Intent(this@AddMaincoreActivity, DashboardActivity::class.java)
+            startActivity(moveDashboard)
+            finishAffinity()
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.teguhrmdhn.simata
+package com.teguhrmdhn.simata.maincore
 
 class Maincore (var tanggal:String,
                 var teknisi:String,

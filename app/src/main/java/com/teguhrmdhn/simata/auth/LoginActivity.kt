@@ -42,6 +42,7 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this, "Succesfully Login", Toast.LENGTH_SHORT).show()
                     val intent = Intent (this, DashboardActivity::class.java)
                     startActivity(intent)
+                    finishAffinity()
                 }
 
                 .addOnFailureListener{
