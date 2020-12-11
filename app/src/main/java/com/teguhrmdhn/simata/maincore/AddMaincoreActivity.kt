@@ -8,7 +8,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.teguhrmdhn.simata.DashboardActivity
 import com.teguhrmdhn.simata.R
-import com.teguhrmdhn.simata.ShowMaincoreActivity
 import kotlinx.android.synthetic.main.activity_add_maincore.*
 
 class AddMaincoreActivity : AppCompatActivity() {
@@ -49,8 +48,8 @@ class AddMaincoreActivity : AppCompatActivity() {
         val oa = et_oa.text.toString()
         val keterangan = et_keterangan.text.toString()
 
-        val datamaincore = Maincore(tanggal, teknisi, sto, gpon_slot, gpon_ip, ea, oa,keterangan)
         val userId = mDatabaseReference.push().key.toString()
+        val datamaincore = Maincore(userId,tanggal, teknisi, sto, gpon_slot, gpon_ip, ea, oa,keterangan)
 
         mDatabaseReference.child(userId).setValue(datamaincore).addOnCompleteListener {
             Toast.makeText(this, "Success", Toast.LENGTH_LONG).show()

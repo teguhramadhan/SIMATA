@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.teguhrmdhn.simata.maincore.AddMaincoreActivity
+import com.teguhrmdhn.simata.maincore.ShowMaincoreActivity
 import kotlinx.android.synthetic.main.activity_dashboard.*
 
 class DashboardActivity : AppCompatActivity() {

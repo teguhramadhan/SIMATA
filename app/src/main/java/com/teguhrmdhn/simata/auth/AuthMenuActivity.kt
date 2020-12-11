@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.teguhrmdhn.simata.R
-import com.teguhrmdhn.simata.ShowMaincoreActivity
+import com.teguhrmdhn.simata.maincore.ShowMaincoreActivity
 import kotlinx.android.synthetic.main.activity_auth_menu.*
 
 class AuthMenuActivity : AppCompatActivity() {

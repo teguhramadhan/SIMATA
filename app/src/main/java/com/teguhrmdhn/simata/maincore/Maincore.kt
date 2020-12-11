@@ -1,6 +1,7 @@
 package com.teguhrmdhn.simata.maincore
 
-class Maincore (var tanggal:String,
+class Maincore (var id:String,
+                var tanggal:String,
                 var teknisi:String,
                 var sto:String,
                 var gpon_slot:String,
@@ -9,15 +10,7 @@ class Maincore (var tanggal:String,
                 var oa:String,
                 var keterangan:String) {
 
-    constructor() : this(
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "") {
+    constructor() : this("", "", "", "", "", "", "", "", "") {
 
     }
 }

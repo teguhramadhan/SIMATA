@@ -1,11 +1,10 @@
-package com.teguhrmdhn.simata
+package com.teguhrmdhn.simata.maincore
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
 import com.google.firebase.database.*
-import com.teguhrmdhn.simata.maincore.Adapter
-import com.teguhrmdhn.simata.maincore.Maincore
+import com.teguhrmdhn.simata.R
 
 class ShowMaincoreActivity : AppCompatActivity() {
 
@@ -29,11 +28,12 @@ class ShowMaincoreActivity : AppCompatActivity() {
             override fun onDataChange(p0: DataSnapshot) {
                 if (p0!!.exists()) {
 
+                    list.clear()
                     for (h in p0.children){
                         val maincore = h.getValue(Maincore::class.java)
                         list.add(maincore!!)
                     }
-                    val adapter = Adapter(applicationContext,R.layout.show_maincore,list)
+                    val adapter = Adapter(this@ShowMaincoreActivity, R.layout.show_maincore,list)
                     listView.adapter = adapter
                 }
             }
