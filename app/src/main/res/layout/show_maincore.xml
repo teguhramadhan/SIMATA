@@ -5,60 +5,135 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/colorBgPurple">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="20dp">
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/bg_white_rounded"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
 
         <LinearLayout
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textSto"
+                android:id="@+id/textKeterangan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sto"
-                android:textSize="24sp" />
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nunito"
+                android:text="Keterangan"
+                android:textColor="@color/colorGreen"
+                android:textSize="14sp"
+                android:typeface="normal" />
 
-            <TextView
-                android:id="@+id/textEa"
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorGraySecondary"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"/>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ea"
-                android:textSize="24sp" />
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingHorizontal="20dp">
 
-            <TextView
-                android:id="@+id/textOa"
+                <View
+                    android:id="@+id/divider4"
+                    android:layout_width="3dp"
+                    android:layout_height="50dp"
+                    android:background="@color/colorGreen" />
+
+                <TextView
+                    android:id="@+id/textJudul"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/nunito"
+                    android:paddingStart="20dp"
+                    android:paddingLeft="20dp"
+                    android:text="Judul"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Oa"
-                android:textSize="24sp" />
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingHorizontal="20dp">
+
+                <TextView
+                    android:id="@+id/textTanggal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/nunito"
+                    android:text="Keterangan"
+                    android:textColor="@color/colorGraySecondary"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="normal"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/btn_update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:fontFamily="@font/nunito"
+                    android:text="See details"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp"
+                    android:background="@drawable/btn_whitebluetint"/>
+
+            </LinearLayout>
+
+
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/textOa"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="Oa"-->
+            <!--                android:textSize="24sp" />-->
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical">-->
 
-            <Button
-                android:id="@+id/btn_update"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Update" />
+<!--            <Button-->
+<!--                android:id="@+id/btn_update"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Update" />-->
 
-            <Button
-                android:id="@+id/btn_delete"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="delete" />
-        </LinearLayout>
+<!--            <Button-->
+<!--                android:id="@+id/btn_delete"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="delete" />-->
+<!--        </LinearLayout>-->
 
     </LinearLayout>
+
 
 </LinearLayout>

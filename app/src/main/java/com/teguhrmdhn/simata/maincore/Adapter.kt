@@ -13,6 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
 import com.teguhrmdhn.simata.R
+import kotlinx.android.synthetic.main.activity_add_maincore.*
 
 class Adapter(val mCtx: Context, val layoutResId: Int, val list: List<Maincore> )
     : ArrayAdapter<Maincore>(mCtx,layoutResId,list){
@@ -23,26 +24,27 @@ class Adapter(val mCtx: Context, val layoutResId: Int, val list: List<Maincore> 
 
         //deklarasi for update
         val btnUpdate = view.findViewById<TextView>(R.id.btn_update)
-        val btnDelete = view.findViewById<TextView>(R.id.btn_delete)
+//        val btnDelete = view.findViewById<TextView>(R.id.btn_delete)
 
         //deklarasi for input
-        val textSto = view.findViewById<TextView>(R.id.textSto)
-        val textEa = view.findViewById<TextView>(R.id.textEa)
-        val textOa = view.findViewById<TextView>(R.id.textOa)
+        val textJudul = view.findViewById<TextView>(R.id.textJudul)
+        val textKeterangan = view.findViewById<TextView>(R.id.textKeterangan)
+        val textTanggal = view.findViewById<TextView>(R.id.textTanggal)
 
         val maincore = list[position]
 
-        textSto.text = maincore.sto
-        textEa.text = maincore.ea
-        textOa.text = maincore.oa
+        textJudul.text = maincore.judul
+        textKeterangan.text = maincore.keterangan
+        textTanggal.text = maincore.tanggal
+
 
         btnUpdate.setOnClickListener {
             showUpdateDialog(maincore)
         }
 
-        btnDelete.setOnClickListener {
-            Deleteinfo(maincore)
-        }
+//        btnDelete.setOnClickListener {
+//            Deleteinfo(maincore)
+//        }
 
         return view
     }
@@ -73,31 +75,42 @@ class Adapter(val mCtx: Context, val layoutResId: Int, val list: List<Maincore> 
         val view = inflater.inflate(R.layout.update_maincore, null)
 
         val textTanggal = view.findViewById<EditText>(R.id.et_tanggal)
+        val textJudul = view.findViewById<EditText>(R.id.et_judul)
         val textTeknisi = view.findViewById<EditText>(R.id.et_teknisi)
         val textSto = view.findViewById<EditText>(R.id.et_sto)
         val textGponSlot = view.findViewById<EditText>(R.id.et_gponslot)
         val textGponIp = view.findViewById<EditText>(R.id.et_gponip)
         val textEa = view.findViewById<EditText>(R.id.et_ea)
         val textOa = view.findViewById<EditText>(R.id.et_oa)
+        val textOdc = view.findViewById<EditText>(R.id.et_odc)
         val textKeterangan = view.findViewById<EditText>(R.id.et_keterangan)
 
+        textTanggal.setText(maincore.tanggal)
+        textJudul.setText(maincore.judul)
+        textTeknisi.setText(maincore.teknisi)
         textSto.setText(maincore.sto)
+        textGponSlot.setText(maincore.gpon_slot)
+        textGponIp.setText(maincore.gpon_ip)
         textEa.setText(maincore.ea)
         textOa.setText(maincore.oa)
+        textOdc.setText(maincore.odc)
+        textKeterangan.setText(maincore.keterangan)
 
         builder.setView(view)
 
-        builder.setPositiveButton("Update") { dialog, which ->
+        builder.setPositiveButton("Update Data Maincore") { dialog, which ->
 
             val dbMaincore = FirebaseDatabase.getInstance().getReference("MAINCORE")
 
             val tanggal = textTanggal.text.toString().trim()
+            val judul = textJudul.text.toString().trim()
             val teknisi = textTeknisi.text.toString().trim()
             val sto = textSto.text.toString().trim()
             val gpon_slot = textGponSlot.text.toString().trim()
             val gpon_ip = textGponIp.text.toString().trim()
             val ea = textEa.text.toString().trim()
             val oa = textOa.text.toString().trim()
+            val odc = textOdc.text.toString().trim()
             val keterangan = textKeterangan.text.toString().trim()
 
             if (sto.isEmpty()){
@@ -119,7 +132,7 @@ class Adapter(val mCtx: Context, val layoutResId: Int, val list: List<Maincore> 
             }
 
 
-            val maincore = Maincore(maincore. id, tanggal, teknisi, gpon_slot, gpon_ip, sto, ea, oa, keterangan)
+            val maincore = Maincore(maincore. id, tanggal, judul, teknisi, sto, gpon_slot, gpon_ip, ea, oa, odc, keterangan)
 
             dbMaincore.child(maincore.id).setValue(maincore).addOnCompleteListener {
                 Toast.makeText(mCtx,"Updated", Toast.LENGTH_SHORT).show()

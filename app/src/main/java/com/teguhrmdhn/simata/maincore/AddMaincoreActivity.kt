@@ -39,6 +39,7 @@ class AddMaincoreActivity : AppCompatActivity() {
 
     private fun saveDataMaincore() {
 
+        val judul = "FTM" + "-" + et_sto.text.toString() + "-" + et_odc.text.toString()
         val tanggal = et_tanggal.text.toString()
         val teknisi = et_teknisi.text.toString()
         val sto = et_sto.text.toString()
@@ -46,10 +47,11 @@ class AddMaincoreActivity : AppCompatActivity() {
         val gpon_ip = et_gponip.text.toString()
         val ea = et_ea.text.toString()
         val oa = et_oa.text.toString()
+        val odc = et_odc.text.toString()
         val keterangan = et_keterangan.text.toString()
 
         val userId = mDatabaseReference.push().key.toString()
-        val datamaincore = Maincore(userId,tanggal, teknisi, sto, gpon_slot, gpon_ip, ea, oa,keterangan)
+        val datamaincore = Maincore(userId, tanggal, judul, teknisi, sto, gpon_slot, gpon_ip, ea, oa, odc, keterangan)
 
         mDatabaseReference.child(userId).setValue(datamaincore).addOnCompleteListener {
             Toast.makeText(this, "Success", Toast.LENGTH_LONG).show()
@@ -60,6 +62,7 @@ class AddMaincoreActivity : AppCompatActivity() {
             et_gponip.setText("")
             et_ea.setText("")
             et_oa.setText("")
+            et_odc.setText("")
             et_keterangan.setText("")
             val moveDashboard = Intent(this@AddMaincoreActivity, DashboardActivity::class.java)
             startActivity(moveDashboard)
